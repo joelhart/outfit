@@ -1,4 +1,3 @@
-// import { Form, Button } from 'semantic-ui-react'
 import Data from "./Data"
 import { useRef } from 'react';
 
@@ -8,7 +7,6 @@ export default function Clothing() {
 
     function storeData(event) {
         event.preventDefault();
-        // let collection = event.target.getElementsByTagName("input");
         let newName = document.getElementById('Name').value;
         let newColor = document.getElementById('Color').value;
         let newType = document.getElementById('Type').value;
@@ -30,7 +28,7 @@ export default function Clothing() {
                 <input type="text" id="Color"></input>
                 <label>Type</label>
                 <select type="text" id="Type">
-                    <option value="shirt">Shirt</option>
+                    <option value="shirts">Shirts</option>
                     <option value="pants">Pants</option>
                     <option value="shoes">Shoes</option>
                 </select>

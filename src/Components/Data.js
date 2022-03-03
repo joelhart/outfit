@@ -3,26 +3,36 @@ export default function Data(newName, newColor, newType) {
 
     //If there is no localstorage, use defaults below
     if (!localStorage.getItem('Clothes')) {
-        // dataOBJ = { Clothes: { Item1: { name: "striped shirt", color: "red", type: "shirt" }, Item2: { name: "solid shirt", color: "blue", type: "shirt" } } };
-        dataOBJ = { Clothes: {} };
+        dataOBJ = { Shirts: {}, Pants: {}, Shoes: {} };
     } else {     //if it does exist; convert from json to JavascriptOBJ
         dataOBJ = JSON.parse(localStorage.getItem("Clothes"));
     }
 
     //If all inputs are filled, create new item in dataOBJ
     if (newName !== "" && newColor !== "") {
-        let numName = Object.keys(dataOBJ.Clothes).length + 1;
-        console.log("Before");
-        console.log(dataOBJ);
-        dataOBJ.Clothes[numName] = {};
-        dataOBJ.Clothes[numName].name = newName;
-        dataOBJ.Clothes[numName].color = newColor;
-        dataOBJ.Clothes[numName].type = newType;
-        console.log("After");
-        console.log(dataOBJ);
+        if (newType === "shirts") {
+            let numName = Object.keys(dataOBJ.Shirts).length + 1;
+            dataOBJ.Shirts[numName] = {};
+            dataOBJ.Shirts[numName].name = newName;
+            dataOBJ.Shirts[numName].color = newColor;
+            dataOBJ.Shirts[numName].type = newType;
+        } else if (newType === "pants") {
+            let numName = Object.keys(dataOBJ.Pants).length + 1;
+            dataOBJ.Pants[numName] = {};
+            dataOBJ.Pants[numName].name = newName;
+            dataOBJ.Pants[numName].color = newColor;
+            dataOBJ.Pants[numName].type = newType;
+        } else if (newType === "shoes") {
+            let numName = Object.keys(dataOBJ.Shoes).length + 1;
+            dataOBJ.Shoes[numName] = {};
+            dataOBJ.Shoes[numName].name = newName;
+            dataOBJ.Shoes[numName].color = newColor;
+            dataOBJ.Shoes[numName].type = newType;
+        }
         console.log(JSON.stringify(dataOBJ, null, 4));
     } else {
         console.log("No inputs");
+        console.log(JSON.stringify(dataOBJ, null, 4));
     }
 
     // Update LocalStorage object with dataOBJ
