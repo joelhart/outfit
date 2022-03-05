@@ -7,6 +7,8 @@ export default function Clothing() {
 
     function storeData(event) {
         event.preventDefault();
+
+        //BEST PRACTICE: This isn't a very react way of getting values form the dom but it works!
         let newName = document.getElementById('Name').value;
         let newColor = document.getElementById('Color').value;
         let newType = document.getElementById('Type').value;

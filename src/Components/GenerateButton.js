@@ -10,6 +10,7 @@ export default function Clothing() {
         let tempPant = "None";
         let tempShoe = "None";
 
+        // DRY: getRandomInRange(0, dataVar.Shirts.length)
         if (Object.keys(dataVar.Shirts).length > 0) {
             tempShirt = dataVar.Shirts[Math.floor((Math.random() * Object.keys(dataVar.Shirts).length)) + 1].name;
         }
@@ -17,6 +18,7 @@ export default function Clothing() {
             tempPant= dataVar.Pants[Math.floor((Math.random() * Object.keys(dataVar.Pants).length)) + 1].name;
         }
         if (Object.keys(dataVar.Shoes).length > 0) {
+            //STYLE: also typically you camelCase attribute names dataVar.Shoes -> dataVar.shoes
             tempShoe= dataVar.Shoes[Math.floor((Math.random() * Object.keys(dataVar.Shoes).length)) + 1].name;
         }
         alert(tempShirt + " " + tempPant + " " + tempShoe);
