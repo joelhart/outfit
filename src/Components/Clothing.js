@@ -2,20 +2,23 @@ import addClothingItem from "./Data"
 import { removeClothingItem } from "./Data"
 import React, { useState } from 'react'
 import ItemList from "./ItemList"
+import {useCounter} from "../store/counter";
 
 export default function Clothing() {
 
     const [state, setstate] = useState({data:""})
-  
-    const changeState = () => {  
+
+    const changeState = () => {
         setstate({data:`state/props of parent component 
-        is send by onClick event to another component`}); 
+        is send by onClick event to another component`});
        };
 
     const ref = React.useRef();
 
     function storeData(event) {
         event.preventDefault();
+
+        //BEST PRACTICE: This isn't a very react way of getting values form the dom but it works!
         let newName = document.getElementById('Name').value;
         let newColor = document.getElementById('Color').value;
         let newType = document.getElementById('Type').value;
@@ -33,6 +36,8 @@ export default function Clothing() {
     let clickRemoveItem = (e) => {
         removeClothingItem(removeItemName.current.value, removeItemType.current.value);
     };
+
+    const {inc} = useCounter();
 
     return (
         <div>
@@ -73,6 +78,7 @@ export default function Clothing() {
                 </select>
                 <input ref={removeItemName} type="text" />
                 <button onClick={clickRemoveItem}>Remove Item</button>
+                <button onClick={inc}>Test</button>
             </div>
             {/* <ItemList data={state.data} /> */}
         </div>

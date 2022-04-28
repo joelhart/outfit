@@ -5,14 +5,17 @@ import OutfitOutput from "./Components/OutfitOutput"
 import GenerateButton from "./Components/GenerateButton"
 // import GenerateButton,{OutfitOutput} from './Modules/OutfitOutput';
 import ItemList from "./Components/ItemList"
+import { CounterProvider } from "./store/counter"
 
 export function App() {
   return (
     <div>
-      <Clothing />
-      <OutfitOutput />
-      <GenerateButton />
-      <ItemList />
+      <CounterProvider>
+        <Clothing />
+        <OutfitOutput />
+        <GenerateButton />
+        <ItemList />
+      </CounterProvider>
     </div>
   )
 }
