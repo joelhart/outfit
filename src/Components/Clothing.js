@@ -2,14 +2,15 @@ import addClothingItem from "./Data"
 import { removeClothingItem } from "./Data"
 import React, { useState } from 'react'
 import ItemList from "./ItemList"
+import {useCounter} from "../store/counter";
 
 export default function Clothing() {
 
     const [state, setstate] = useState({data:""})
-  
-    const changeState = () => {  
+
+    const changeState = () => {
         setstate({data:`state/props of parent component 
-        is send by onClick event to another component`}); 
+        is send by onClick event to another component`});
        };
 
     const ref = React.useRef();
@@ -35,6 +36,8 @@ export default function Clothing() {
     let clickRemoveItem = (e) => {
         removeClothingItem(removeItemName.current.value, removeItemType.current.value);
     };
+
+    const {inc} = useCounter();
 
     return (
         <div>
@@ -75,6 +78,7 @@ export default function Clothing() {
                 </select>
                 <input ref={removeItemName} type="text" />
                 <button onClick={clickRemoveItem}>Remove Item</button>
+                <button onClick={inc}>Test</button>
             </div>
             {/* <ItemList data={state.data} /> */}
         </div>
