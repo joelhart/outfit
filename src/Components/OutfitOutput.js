@@ -1,9 +1,11 @@
-// import "./style_test.css"
+import "../Components/styles.css"
 
 export default function OutfitOutput() {
     return (
-        <div style={{minHeight: 100}}>
-            {/* <div>another test</div> */}
+        <div>
+            <div id="shirtOutput"></div>
+            <div id="pantOutput"></div>
+            <div id="shoeOutput"></div>
         </div>
         
     )

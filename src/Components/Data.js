@@ -1,3 +1,5 @@
+import { useCounter, CounterProvider } from "../store/counter"
+
 export default function addClothingItem(newName, newColor, newType) {
     var dataOBJ;
 
@@ -39,8 +41,8 @@ export default function addClothingItem(newName, newColor, newType) {
 
         console.log(JSON.stringify(dataOBJ, null, 4));
     } else {
-        console.log("No inputs");
-        console.log(JSON.stringify(dataOBJ, null, 4));
+        // console.log("No inputs");
+        // console.log(JSON.stringify(dataOBJ, null, 4));
     }
 
     // Update LocalStorage object with dataOBJ
