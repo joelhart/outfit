@@ -7,6 +7,4 @@ test('Form Rendered Correctly', () => {
   const nameElement =screen.getByText(/Name/i);
   expect(typeElement).toBeInTheDocument();
   expect(nameElement).toBeInTheDocument();
-
 });
-

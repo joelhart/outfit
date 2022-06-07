@@ -1,9 +1,22 @@
 import { findAllByTestId, render, screen } from '@testing-library/react';
-import Data from "./Data"
+import addClothingItem from "./Data"
 
 describe('Data Component Testing', () => {
     test('Submit with data', () => {
-        expect(Data("Striped", "Red", "shirt")).toEqual({ Clothes: { 1: { name: "Striped", color: "Red", type: "shirt" } } });
+        expect(addClothingItem("Striped", "#FF0000", "Shirts")).toEqual(
+            {
+                "Shirts": {
+                    "1": {
+                        "name": "Striped",
+                        "color": "#FF0000",
+                        "type": "Shirts",
+                        "colorName": "Red"
+                    }
+                },
+                "Pants": {},
+                "Shoes": {}
+            }
+        );
     });
 });
 

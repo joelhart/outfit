@@ -189,7 +189,7 @@ function getRandomCombo() {
     if (Object.keys(dataVar.Shirts).length > 0) {
         tempShirt = dataVar.Shirts[Math.floor((Math.random() * Object.keys(dataVar.Shirts).length)) + 1];
     } else {
-        alert("Incomplete Data, Try Adding Some Items");
+        alert("Incomplete Data, Try Adding Some Shirts");
     }
 
     //See if there are pants or not
@@ -205,7 +205,7 @@ function getRandomCombo() {
             document.getElementById('pantOutput').style.color = hexToComplimentary(tempShoe.color);
 
         } else {
-            alert("Incomplete Data, Try Adding Some Items");
+            alert("Incomplete Data, Try Adding Some Pants");
             return;
         }
     }

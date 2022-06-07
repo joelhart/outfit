@@ -11,7 +11,7 @@ export default function addClothingItem(newName, newColor, newType) {
 
     //If all inputs are filled, create new item in dataOBJ
     if (newName !== "" && newColor !== "") {
-        console.log(dataOBJ[newType]);
+        // console.log(dataOBJ[newType]);
         let numName = Object.keys(dataOBJ[newType]).length + 1;
         dataOBJ[newType][numName] = {};
         dataOBJ[newType][numName].name = newName;
@@ -39,7 +39,7 @@ export default function addClothingItem(newName, newColor, newType) {
             dataOBJ[newType][numName].colorName = "Purple";
         }
 
-        console.log(JSON.stringify(dataOBJ, null, 4));
+        // console.log(JSON.stringify(dataOBJ, null, 4));
     } else {
         // console.log("No inputs");
     }
@@ -50,6 +50,8 @@ export default function addClothingItem(newName, newColor, newType) {
     return (dataOBJ);
 
 }
+
+// console.log(addClothingItem("test1", "test2", "test3"));
 
 // Function for removal of items
 export function removeClothingItem(name, type) {
